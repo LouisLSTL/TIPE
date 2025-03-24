@@ -30,9 +30,9 @@ pS2 = [rotMatr(thetas[i]-retard,ps) for i in range(len(thetas))]
 h2 = [H(r,pS2[i],pN2[i]) for i in range(len(pS2))] 
 
 N = np.array([np.linalg.norm(i) for i in h])
-a =  np.array([np.arctan(i[0]/i[1]) for i in h])
+a =  np.array([np.arctan2(*i) for i in h])
 N2 =  np.array([np.linalg.norm(i) for i in h2])
-a2 =  np.array([np.arctan(i[0]/i[1]) for i in h2])
+a2 =  np.array([np.arctan2(*i) for i in h2])
 
 fig=plt.figure()
 
@@ -49,3 +49,4 @@ ax2.set_xlabel(r'$\theta (rad)$')
 fig.suptitle(r'pour $\theta$'+f' = {alpha} deg') 
 plt.tight_layout()
 plt.show()
+plt.savefig('sim.png')
