@@ -3,6 +3,11 @@
 ## Calcul de la viscosité d'un fluide à l'aide d'un agitateur magnétique
 ### "Transformer un agitateur magnétique en viscomètre"
 
+### Simulation : 
+#### Actuelle : 
+![](sim.png)
+
+
 ### Equations : 
 ***
 #### Couple retardateur de l'eau
