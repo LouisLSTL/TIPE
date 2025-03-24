@@ -33,16 +33,18 @@ N = np.array([np.linalg.norm(i) for i in h])
 a =  np.array([np.arctan2(*i) for i in h])
 N2 =  np.array([np.linalg.norm(i) for i in h2])
 a2 =  np.array([np.arctan2(*i) for i in h2])
-
+htot = h+h2
+Ntot = np.array([np.linalg.norm(i) for i in htot])
+atot = np.array([np.arctan2(*i) for i in htot])
 fig=plt.figure()
 
 
 ax1=fig.add_subplot(2,1,1)
-ax1.plot(thetas,N+N2, 'r')
+ax1.plot(thetas,Ntot, 'r')
 ax1.set_title('Norm of measured magnetic field')
 ax1.set_xlabel(r'$\theta (rad)$')
 ax2=fig.add_subplot(2,1,2)
-ax2.plot(thetas,a+a2 ,'b')
+ax2.plot(thetas,atot ,'b')
 ax2.set_title('Angle measured magnetic field direction')
 ax2.set_xlabel(r'$\theta (rad)$')
 
