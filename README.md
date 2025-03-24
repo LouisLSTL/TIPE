@@ -13,6 +13,11 @@ V : volume de l’agitateur  <br>
 ղ : viscosité ♥  <br>
 ω : vitesse angulaire
 
+##### Déterminer : 
+- V en immergeant l’agitateur dans un récipient d’eau (type éprouvette graduée)
+- ω en faisant un pointage par exemple
+- k avec un liquide de référence de viscosité connue (comme l’eau)
+
 ***
 #### Moment magnétique :
 $${\displaystyle \mathbf {B} ({\mathbf {r} })=\nabla \times {\mathbf {A} }={\frac {\mu _{0}}{4\pi }}\left[{\frac {3\mathbf {r} (\mathbf {m} \cdot \mathbf {r} )}{r^{5}}}-{\frac {\mathbf {m} }{r^{3}}}\right].}$$
