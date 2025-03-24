@@ -6,7 +6,7 @@
 ### Equations : 
 ***
 #### Couple retardateur de l'eau
-$$ N_{hdr} = -kV\eta\omega$$
+$$N_{hdr} = -kV\eta\omega$$
 
 k : shape factor (k = 17,5?) <br>
 V : volume de l’agitateur  <br>
