@@ -13,10 +13,10 @@ V : volume de l’agitateur  <br>
 ղ : viscosité ♥  <br>
 ω : vitesse angulaire
 \
-<span style="color:gray">
+<span style="color:purple">
  - V en immergeant l’agitateur dans un récipient d’eau (type éprouvette graduée)
  - ω en faisant un pointage par exemple
- - - k avec un liquide de référence de viscosité connue (comme l’eau)
+ - k avec un liquide de référence de viscosité connue (comme l’eau)
 </span>
 
 ***
