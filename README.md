@@ -12,7 +12,8 @@ k : shape factor (k = 17,5?) <br>
 V : volume de l’agitateur  <br>
 ղ : viscosité ♥  <br>
 ω : vitesse angulaire
-\
+
+***
 <span style="color:purple">
  - V en immergeant l’agitateur dans un récipient d’eau (type éprouvette graduée)
  - ω en faisant un pointage par exemple
@@ -20,8 +21,12 @@ V : volume de l’agitateur  <br>
 </span>
 
 ***
+couple magnétique : Dipôle [lien](https://en.wikipedia.org/wiki/Magnetic_moment#Magnetic_pole_model)
+
+***
 #### Moment magnétique :
 $${\displaystyle \mathbf {B} ({\mathbf {r} })=\nabla \times {\mathbf {A} }={\frac {\mu _{0}}{4\pi }}\left[{\frac {3\mathbf {r} (\mathbf {m} \cdot \mathbf {r} )}{r^{5}}}-{\frac {\mathbf {m} }{r^{3}}}\right].}$$
+[source](https://en.wikipedia.org/wiki/Magnetic_dipole)
 
 non résolvable par le calcul direct mais déterminable par expérimentation : 
 on mesure B avec un teslamètre en déplaçant le capteur perpendiculairement au moment (du barreau et ou agitateur magnétique) (ce qui va enlever le terme m scalaire r) on a ainsi B proportionnel à m, on trace la droite et on obtient m
