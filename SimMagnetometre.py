@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 p = 1
 r = np.array((3,0))
 pn,ps = np.array((.5,0)),np.array((-.5,0))
-
-retard = 15*np.pi/180
+alpha = 15
+retard = alpha*np.pi/180
 def rotMatr(theta,v):
     return np.matmul(np.array([
         (np.cos(theta),-np.sin(theta)),
@@ -34,12 +34,18 @@ a =  np.array([np.arctan(i[0]/i[1]) for i in h])
 N2 =  np.array([np.linalg.norm(i) for i in h2])
 a2 =  np.array([np.arctan(i[0]/i[1]) for i in h2])
 
-plt.subplot(1, 2, 1)
-plt.plot(thetas,N+N2, 'r')
-plt.title('Norm of measured magnetic field')
-plt.xlabel(r'$\theta (rad)$')
-plt.subplot(1, 2, 2)
-plt.plot(thetas,a+a2 ,'b')
-plt.title('Angle measured magnetic field direction')
-plt.xlabel(r'$\theta (rad)$')
+fig=plt.figure()
+
+
+ax1=fig.add_subplot(2,1,1)
+ax1.plot(thetas,N+N2, 'r')
+ax1.set_title('Norm of measured magnetic field')
+ax1.set_xlabel(r'$\theta (rad)$')
+ax2=fig.add_subplot(2,1,2)
+ax2.plot(thetas,a+a2 ,'b')
+ax2.set_title('Angle measured magnetic field direction')
+ax2.set_xlabel(r'$\theta (rad)$')
+
+fig.suptitle(r'pour $\theta$'+f' = {alpha} deg') 
+plt.tight_layout()
 plt.show()
