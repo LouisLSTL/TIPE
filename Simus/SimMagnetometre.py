@@ -24,11 +24,11 @@ def base(r=np.array((3,0)),p=1,thetas = np.linspace(0,6*np.pi,1000)):
     a =  np.array([np.arctan2(*i) for i in h])
     return N,a
 
-def sim(a,r=np.array((3,0)),p=1,thetas = np.linspace(0,6*np.pi,1000)):
-    pn,ps = np.array((.5,0)),np.array((-.5,0))
+def sim(a,r=np.array((3,0)),p=1,thetas = np.linspace(0,6*np.pi,1000),l=1):
+    pn,ps = np.array((l/2,0)),np.array((-l/2,0))
     alpha = a
-    retard = alpha*np.pi/180
-    def rotMatr(theta,v):
+    retard = alpha*np.pi/180 
+    def rotMatr(theta,v):#matrice de rotation
         return np.matmul(np.array([
             (np.cos(theta),-np.sin(theta)),
             (np.sin(theta),np.cos(theta))]
@@ -41,20 +41,16 @@ def sim(a,r=np.array((3,0)),p=1,thetas = np.linspace(0,6*np.pi,1000)):
         C = m/(np.linalg.norm(r)**3)
         return ((A)/(B) - (C))/(4*np.pi)
 
-    pN = [rotMatr(thetas[i],pn) for i in range(len(thetas))]
+    pN = [rotMatr(thetas[i],pn) for i in range(len(thetas))] #poles tournés
     pS = [rotMatr(thetas[i],ps) for i in range(len(thetas))]
-    h = [H(r,pS[i],pN[i]) for i in range(len(pS))] 
+    h = [H(r,pS[i],pN[i]) for i in range(len(pS))] #champ vect
 
-    pN2 = np.array([rotMatr(thetas[i]-retard,pn) for i in range(len(thetas))])
+    pN2 = np.array([rotMatr(thetas[i]-retard,pn) for i in range(len(thetas))]) #idem pour 2e aimant
     pS2 = np.array([rotMatr(thetas[i]-retard,ps) for i in range(len(thetas))])
     h2 = np.array([H(r,pS2[i],pN2[i]) for i in range(len(pS2))])
 
-    N = np.array([np.linalg.norm(i) for i in h])
-    a =  np.array([np.arctan2(*i) for i in h])
-    N2 =  np.array([np.linalg.norm(i) for i in h2])
-    a2 =  np.array([np.arctan2(*i) for i in h2])
-    htot = h+h2
-    Ntot = np.array([np.linalg.norm(i) for i in htot])
+    htot = h+h2 #hypothese
+    Ntot = np.array([np.linalg.norm(i) for i in htot]) #calculs norme et dir
     atot = np.array([np.arctan2(*i) for i in htot])
 
     return Ntot,atot
