@@ -10,6 +10,15 @@ def rotMatr(theta,v):
              ]).T)
 
 
+
+
+
+
+def omegaC(phi,eta,omega):
+    a,b = np.polyfit(eta,np.sin(phi)/omega,1)
+    return b        # KV/m0Be
+
+
 print(rotMatr(np.linspace(0,6*np.pi,1000),np.array((0,1))))
 
 def Hall(B,I=np.array((-1,0,0)),Rh=3,t=1):
@@ -60,4 +69,6 @@ def sim(a,r=np.array((3,0)),p=1,thetas = np.linspace(0,6*np.pi,1000),l=1,returnB
     
     #Ntot = np.array([np.linalg.norm(i) for i in htot]) #calculs norme et dir
     atot = np.array([(np.arctan2(*i)) if i[0]!=0 else np.arcsin(i[1]/np.linalg.norm(i)) for i in htot]) #dernier à enlever
+
+
     return (Ntot,atot) if not returnB else htot*mu0
